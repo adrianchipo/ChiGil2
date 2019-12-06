@@ -1,26 +1,24 @@
-import abc
+from abc import ABCMeta, abstractmethod
 
-ABC = abc.ABCMeta('ABC', (object,), {'__slots__': ()}) 
-
-class PersonaClaseBase(ABC):
+class PersonaClaseBase(metaclass=ABCMeta):
     def __init__(self, Usuario, Contrasena, LimiteLibros, LimiteRenovacion):
         self.Usuario = Usuario
         self.Contrasena = Contrasena
         self.LimiteLibros = LimiteLibros
         self.LimiteRenovacion = LimiteRenovacion
     
-    @abc.abstractmethod
+    @abstractmethod
     def BuscarLibro(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def PrestarLibro(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def RegresarLibro(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def RegistrarEstudiante(self):
         pass
